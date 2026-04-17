@@ -11,7 +11,7 @@ import java.io.IOException;
 
 @WebServlet(name = "authServlet", urlPatterns = "/auth/*")
 public class AuthServlet extends HttpServlet {
-    private AuthServices authServices;
+    private AuthServices authServices = new AuthServices();
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String pathInfo = request.getPathInfo();
@@ -26,13 +26,18 @@ public class AuthServlet extends HttpServlet {
                 // Đường dẫn tính từ thư mục webapp
                 request.getRequestDispatcher("/WEB-INF/view/user/login_user.jsp").forward(request, response);
                 break;
+            case "/user/home":
+                request.getRequestDispatcher("/WEB-INF/view/user/home_user.jsp").forward(request, response);
+                break;
             case "/user/register":
                 request.getRequestDispatcher("/WEB-INF/view/user/register_user.jsp").forward(request, response);
                 break;
             case "/admin/login":
                 request.getRequestDispatcher("/WEB-INF/view/admin/login.jsp").forward(request, response);
-            case "/home/admin":
+                break;
+            case "/admin/home":
                 request.getRequestDispatcher("/WEB-INF/view/admin/home.jsp").forward(request, response);
+                break;
             default:
                 response.sendRedirect(request.getContextPath() + "");
                 break;

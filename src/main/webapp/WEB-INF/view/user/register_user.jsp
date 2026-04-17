@@ -51,6 +51,10 @@
       <a href="/auth/user/login" style="text-decoration: none; font-weight: bold;">Đăng nhập</a>
     </div>
 
+    <div class="text-center mt-3">
+      <a href="/" style="text-decoration: none; font-weight: bold;">Quay lại trang chủ chọn vai trò</a>
+    </div>
+
   </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

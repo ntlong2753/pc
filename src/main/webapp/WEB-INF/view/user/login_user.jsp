@@ -19,7 +19,7 @@
   <br> <br> <br>
   <h2 class="text-center" style="margin-top: 30px;">Đăng nhập vào hệ thống</h2>
   <br>
-  <form action="/auth/user/login" method="post" class="form-signin" style="max-width: 400px; margin: 0 auto;">
+  <form action="${pageContext.request.contextPath}/auth/login" method="post" class="form-signin" style="max-width: 400px; margin: 0 auto;">
     <% if (errorMessage != null) { %>
     <div class="alert alert-danger text-center" role="alert">
       <%= errorMessage %>
@@ -36,7 +36,10 @@
       <label for="password">Mật khẩu</label>
     </div>
 
-    <button class="btn btn-primary w-100" type="submit" style="background-color: #0866ff; border: none; padding: 10px; font-weight: bold;">Đăng nhập</button>
+    <button class="btn btn-primary w-100" type="submit"
+            style="background-color: #0866ff; border: none; padding: 10px; font-weight: bold;">Đăng nhập</button>
+
+
     <div class="text-center mt-3">
       <span>Bạn chưa có tài khoản? </span>
       <a href="/auth/user/register" style="text-decoration: none; font-weight: bold;">Tạo tài khoản</a>

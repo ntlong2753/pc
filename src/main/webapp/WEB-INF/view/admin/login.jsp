@@ -19,7 +19,7 @@
   <br> <br> <br>
   <h2 class="text-center" style="margin-top: 30px;">Đăng nhập vào hệ thống</h2>
   <br>
-  <form action="/auth/admin/login" method="post" class="form-signin" style="max-width: 400px; margin: 0 auto;">
+  <form action="${pageContext.request.contextPath}/auth/login" method="post" class="form-signin" style="max-width: 400px; margin: 0 auto;">
     <% if (errorMessage != null) { %>
     <div class="alert alert-danger text-center" role="alert">
       <%= errorMessage %>
@@ -36,13 +36,13 @@
       <label for="password">Mật khẩu</label>
     </div>
 
-    <button class="btn btn-primary w-100" type="submit" style="background-color: #0866ff; border: none; padding: 10px; font-weight: bold;">Đăng nhập
-<%--      <a href="/auth/admin/home" style="color: white;"></a>--%>
-    </button>
+    <button class="btn btn-primary w-100" type="submit"
+            style="background-color: #0866ff; border: none; padding: 10px; font-weight: bold;">Đăng nhập</button>
 
     <div class="text-center mt-3">
       <a href="/" style="text-decoration: none; font-weight: bold;">Quay lại trang chủ chọn vai trò</a>
     </div>
+
   </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

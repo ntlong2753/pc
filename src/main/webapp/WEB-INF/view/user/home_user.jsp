@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-
+<form action="/user/login" method="get"></form>
 </body>
 </html>

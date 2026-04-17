@@ -15,11 +15,31 @@
   <title>Admin Dashboard - Game Management</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body { background-color: #f8f9fa; }
-    .table-container { margin-top: 50px; background: white; padding: 30px; border-radius: 10px; shadow: 0 0 15px rgba(0,0,0,0.1); }
-    .table thead { background-color: #212529; color: white; }
-    .btn-create { background-color: #198754; color: white; border: none; }
-    .btn-create:hover { background-color: #157347; color: white; }
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .table-container {
+      margin-top: 50px;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .table thead {
+      background-color: #212529;
+      color: white;
+    }
+
+    .btn-create {
+      background-color: #198754;
+      color: white; border: none;
+    }
+
+    .btn-create:hover {
+      background-color: #157347;
+      color: white; }
   </style>
 </head>
 <body>
@@ -30,7 +50,7 @@
 
     <div class="d-flex justify-content-between mb-3">
       <div class="d-flex align-items-center">
-        <a href="add-game.jsp" class="btn btn-create px-4 me-3">Create</a>
+        <a href="${pageContext.request.contextPath}/admin/create" class="btn btn-create px-4 me-3">Create</a>
 
         <form action="admin-home" method="get" id="filterForm">
           <select name="categoryId" class="form-select" onchange="document.getElementById('filterForm').submit()">
@@ -54,42 +74,71 @@
       <thead>
       <tr>
         <th>ID</th>
-        <th>Game Name</th>
-        <th>Price</th>
         <th>Category ID</th>
+        <th>Game Name</th>
+        <th>Image</th>
         <th>Description</th>
+        <th>Price</th>
         <th>Action</th>
       </tr>
       </thead>
+      <tr>
+        <td>1</td>
+        <td>MOBA</td>
+        <td>Liên Minh Huyền Thoại</td>
+        <td>
+          <img src="path/to/your/image.jpg" alt="Game Image"
+               style="width: 80px; height: auto; border-radius: 5px; object-fit: cover;">
+        </td>
+        <td>Game chiến thuật đồng đội</td>
+        <td>0.00</td>
+        <td>
+          <a href="edit?id=3" class="btn btn-sm btn-primary me-1">Edit</a>
+          <button class="btn btn-sm btn-danger" onclick="confirmDelete(3)">Delete</button>
+        </td>
+      </tr>
       <tbody>
       <tr>
         <td>1</td>
+        <td>MOBA</td>
         <td>Liên Minh Huyền Thoại</td>
-        <td>0.00</td>
-        <td>1 (MOBA)</td>
+        <td>
+          <img src="path/to/your/image.jpg" alt="Game Image"
+               style="width: 80px; height: auto; border-radius: 5px; object-fit: cover;">
+        </td>
         <td>Game chiến thuật đồng đội</td>
+        <td>0.00</td>
         <td>
-          <a href="edit?id=1" class="btn btn-sm btn-primary me-1">Edit</a>
-          <button class="btn btn-sm btn-danger" onclick="confirmDelete(1)">Delete</button>
+          <a href="edit?id=3" class="btn btn-sm btn-primary me-1">Edit</a>
+          <button class="btn btn-sm btn-danger" onclick="confirmDelete(3)">Delete</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>MOBA</td>
+        <td>Liên Minh Huyền Thoại</td>
+        <td>
+          <img src="path/to/your/image.jpg" alt="Game Image"
+               style="width: 80px; height: auto; border-radius: 5px; object-fit: cover;">
+        </td>
+        <td>Game chiến thuật đồng đội</td>
+        <td>0.00</td>
+        <td>
+          <a href="edit?id=3" class="btn btn-sm btn-primary me-1">Edit</a>
+          <button class="btn btn-sm btn-danger" onclick="confirmDelete(3)">Delete</button>
         </td>
       </tr>
       <tr>
-        <td>2</td>
-        <td>Elden Ring</td>
-        <td>990,000</td>
-        <td>2 (RPG)</td>
-        <td>Game nhập vai hành động</td>
+        <td>1</td>
+        <td>MOBA</td>
+        <td>Liên Minh Huyền Thoại</td>
         <td>
-          <a href="edit?id=2" class="btn btn-sm btn-primary me-1">Edit</a>
-          <button class="btn btn-sm btn-danger" onclick="confirmDelete(2)">Delete</button>
+          <img src="path/to/your/image.jpg" alt="Game Image"
+               style="width: 80px; height: auto; border-radius: 5px; object-fit: cover;">
         </td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>FIFA 23</td>
-        <td>1,200,000</td>
-        <td>3 (Sports)</td>
-        <td>Game bóng đá đỉnh cao</td>
+        <td>Game chiến thuật đồng đội</td>
+        <td>0.00</td>
         <td>
           <a href="edit?id=3" class="btn btn-sm btn-primary me-1">Edit</a>
           <button class="btn btn-sm btn-danger" onclick="confirmDelete(3)">Delete</button>
